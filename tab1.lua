@@ -1,5 +1,5 @@
 function make_player()
- player{}
+ player={}
  player.x=27 --position
  player.y=60
  player.dy=0 --fall speed
@@ -12,8 +12,12 @@ end
 
 function draw_player()
  if (game_over) then
-  spr(player.dead,player.x,player.y)
- elseif (player.dy<0 then
+  spr(
+    player.dead,
+    player.x,
+    player.y
+)
+ elseif (player.dy<0) then
   spr(
    player.rise,
    player.x,
@@ -26,4 +30,17 @@ function draw_player()
    player.y
   )
  end
-end 
+end
+
+function move_player()
+    gravity=0.2 --increase this to increase the gravity
+    player.dy+=gravity -- add gravity
+
+    --jump
+    if (btnp(2)) then
+        player.dy-=5
+    end
+
+    --move to a new position
+    player.y+=player.dy
+end
