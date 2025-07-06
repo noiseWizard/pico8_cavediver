@@ -43,7 +43,7 @@ end
 function draw_cave()
     top_color=5 --play with these!
     btm_color=5 --choose your own colors!
-    for i=1, #cave do
+    for i = 1, #cave do
         line(i-1,0,i-1,cave[i].top,top_color)
         line(i-1,127,i-1,cave[i].btm,btm_color)
     end
