@@ -44,3 +44,11 @@ function move_player()
     --move to a new position
     player.y+=player.dy
 end
+
+function check_hit()
+    for i=player.x,player.x+7 do
+        if(cave[i+1].top>player.y OR cave[i+1].btm<player.y+7) then
+            game_over=true
+        end
+    end
+end

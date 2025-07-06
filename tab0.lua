@@ -5,8 +5,11 @@ function _init()
 end
 
 function _update()
-    update_cave()
-    move_player()
+    if (not game_over) then
+        update_cave()
+        move_player()
+        check_hit()
+    end
 end
 
 function _draw()
