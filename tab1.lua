@@ -39,6 +39,7 @@ function move_player()
     --jump
     if (btnp(2)) then
         player.dy-=5
+        sfx(0)
     end
 
     --move to a new position
@@ -52,6 +53,7 @@ function check_hit()
     for i = player.x, player.x+7 do
         if(cave[i+1].top>player.y OR cave[i+1].btm<player.y+7) then
             game_over=true
+            sfx(1)
         end
     end
 end
